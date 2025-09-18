@@ -1,0 +1,12 @@
+resource "aws_security_group" "open_security_group" {
+  name        = "open_security_group"
+  description = "Allows all inbound traffic"
+  vpc_id      = "vpc-12345678"
+
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
